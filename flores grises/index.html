@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El mundo de las flores azules</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eaf2ff;
+            color: #284775;
+        }
+
+        header {
+            text-align: center;
+            padding: 35px 15px;
+            background: linear-gradient(135deg, #c9ddff, #e8e5ff);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            line-height: 1.7;
+        }
+
+        nav {
+            text-align: center;
+            background: #d6e5ff;
+            padding: 17px;
+        }
+
+        nav a {
+            color: #284775;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 12px;
+        }
+
+        .introduccion {
+            text-align: center;
+            padding: 35px 20px 20px;
+        }
+
+        .introduccion h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .introduccion p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 25px;
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        .flor {
+            background: white;
+            padding: 18px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px #7899c526;
+            transition: transform 0.3s;
+        }
+
+        .flor:hover {
+            transform: translateY(-5px);
+        }
+
+        .foto {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 13px;
+            background: #b8d5ff;
+        }
+
+        .flor h3 {
+            color: #3568b4;
+            font-size: 24px;
+            margin: 18px 0 10px;
+        }
+
+        .significado {
+            display: inline-block;
+            background: #dce9ff;
+            color: #315b9b;
+            padding: 9px 13px;
+            border-radius: 25px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .flor p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background: #477ed1;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #285da9;
+        }
+
+        .dato {
+            display: none;
+            background: #edf4ff;
+            border-left: 4px solid #477ed1;
+            padding: 14px;
+            margin-top: 14px;
+            border-radius: 8px;
+            line-height: 1.7;
+        }
+
+        .dato.visible {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #d6e5ff;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .contenedor {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header id="inicio">
+    <h1>💙 El mundo de las flores azules 🌸</h1>
+    <p>Descubre flores extraordinarias y los secretos
+       que esconden sus pétalos.</p>
+</header>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#flores">Las flores</a>
+    <a href="#final">Reflexión</a>
+</nav>
+
+<section class="introduccion">
+    <h2>La magia de las flores azules</h2>
+    <p>
+        El azul nos recuerda al cielo, al agua y a la tranquilidad.
+        Aunque las flores naturalmente azules son poco comunes,
+        existen especies preciosas que presentan tonos celestes,
+        azules intensos y violetas.
+    </p>
+</section>
+
+<main class="contenedor" id="flores">
+
+    <article class="flor">
+        <img class="foto"
+             src="https://commons.wikimedia.org/wiki/Special:FilePath/Blue_hydrangea_flower_close_up.jpg"
+             alt="Hortensia de color azul">
+
+        <h3>Hortensia azul</h3>
+        <span class="significado">Gratitud y comprensión</span>
+
+        <p>
+            La hortensia produce grupos de pequeñas flores.
+            Puede presentar tonos azules, violetas, rosas o blancos.
+        </p>
+
+        <button onclick="mostrarDato(0)">Descubrir dato curioso</button>
+
+        <div class="dato" id="dato0">
+            <strong>¿Sabías que?</strong>
+            En ciertas variedades, la acidez del suelo y la
+            disponibilidad de aluminio ayudan a determinar si
+            las flores serán azules o rosadas.
+        </div>
+    </article>
+
+    <article class="flor">
+        <img class="foto"
+             src="https://commons.wikimedia.org/wiki/Special:FilePath/Forget-me-not%2C_Myosotis_sylvatica_flower_%2814093869903%29.jpg"
+             alt="Nomeolvides con pétalos azules">
+
+        <h3>Nomeolvides</h3>
+        <span class="significado">Recuerdo y amistad</span>
+
+        <p>
+            Es una pequeña flor de pétalos generalmente celestes
+            o azules y un centro amarillo.
+        </p>
+
+        <button onclick="mostrarDato(1)">Descubrir dato curioso</button>
+
+        <div class="dato" id="dato1">
+            <strong>¿Sabías que?</strong>
+            En inglés se llama "forget-me-not", que significa
+            "no me olvides". Por eso se relaciona con los recuerdos,
+            la amistad y el cariño duradero.
+        </div>
+    </article>
+
+    <article class="flor">
+        <img class="foto"
+             src="https://commons.wikimedia.org/wiki/Special:FilePath/Campanula_rotundifolia_%285257884719%29.jpg"
+             alt="Campanillas silvestres azules">
+
+        <h3>Campanilla azul</h3>
+        <span class="significado">Serenidad y naturaleza</span>
+
+        <p>
+            Sus flores tienen forma de pequeñas campanas y
+            pueden crecer inclinadas hacia el suelo.
+        </p>
+
+        <button onclick="mostrarDato(2)">Descubrir dato curioso</button>
+
+        <div class="dato" id="dato2">
+            <strong>¿Sabías que?</strong>
+            Algunas campanillas son visitadas por abejas y otros
+            insectos que ayudan a transportar el polen entre flores.
+        </div>
+    </article>
+
+    <article class="flor">
+        <img class="foto"
+             src="https://commons.wikimedia.org/wiki/Special:FilePath/Iris_germanica.jpg"
+             alt="Iris de tonos azules y violetas"
+             onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Iris_germanica_1.jpg'">
+
+        <h3>Iris azul</h3>
+        <span class="significado">Sabiduría y esperanza</span>
+
+        <p>
+            El iris destaca por sus pétalos elegantes y sus
+            combinaciones de azul, violeta y blanco.
+        </p>
+
+        <button onclick="mostrarDato(3)">Descubrir dato curioso</button>
+
+        <div class="dato" id="dato3">
+            <strong>¿Sabías que?</strong>
+            El nombre iris procede del griego y significa
+            "arcoíris", una referencia a la variedad de colores
+            que presentan las flores de este grupo.
+        </div>
+    </article>
+
+    <article class="flor">
+        <img class="foto"
+             src="https://commons.wikimedia.org/wiki/Special:FilePath/Agapanthus_africanus_%283%29.JPG"
+             alt="Agapanto con flores azuladas">
+
+        <h3>Agapanto</h3>
+        <span class="significado">Amor y elegancia</span>
+
+        <p>
+            Sus pequeñas flores se agrupan formando una esfera
+            al final de un tallo largo.
+        </p>
+
+        <button onclick="mostrarDato(4)">Descubrir dato curioso</button>
+
+        <div class="dato" id="dato4">
+            <strong>¿Sabías que?</strong>
+            El nombre agapanto se relaciona con palabras griegas
+            que significan amor y flor. También se conoce como
+            lirio africano.
+        </div>
+    </article>
+
+    <article class="flor">
+        <img class="foto"
+             src="https://commons.wikimedia.org/wiki/Special:FilePath/Blue_Rose_Flower_Blooms_%28Rosaceae%29.jpg"
+             alt="Rosa azul">
+
+        <h3>Rosa azul</h3>
+        <span class="significado">Misterio e imaginación</span>
+
+        <p>
+            Las rosas azules son flores llamativas asociadas con
+            los sueños, lo extraordinario y lo inalcanzable.
+        </p>
+
+        <button onclick="mostrarDato(5)">Descubrir dato curioso</button>
+
+        <div class="dato" id="dato5">
+            <strong>¿Sabías que?</strong>
+            Las rosas no producen naturalmente un azul intenso.
+            Las rosas azules comerciales suelen ser teñidas,
+            o tener tonos lilas obtenidos mediante técnicas
+            especiales de cultivo y biotecnología.
+        </div>
+    </article>
+
+</main>
+
+<footer id="final">
+    <h2>💙 Cada flor tiene una historia</h2>
+    <p>
+        La naturaleza está llena de colores, formas y secretos
+        que vale la pena descubrir.
+    </p>
+    <p>¿Cuál de estas flores te gustó más?</p>
+</footer>
+
+<script>
+    function mostrarDato(numero) {
+        let dato = document.getElementById("dato" + numero);
+        let boton = dato.previousElementSibling;
+
+        dato.classList.toggle("visible");
+
+        if (dato.classList.contains("visible")) {
+            boton.textContent = "Ocultar dato curioso";
+        } else {
+            boton.textContent = "Descubrir dato curioso";
+        }
+    }
+</script>
+
+</body>
+</html>
